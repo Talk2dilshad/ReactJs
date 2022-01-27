@@ -49,7 +49,7 @@
                 <div class="media">
                     <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="chiken curry">
                     <div class="media-body">
-                        <h2 class="mt-0"><span class="badge badge-danger">ORDER FAST</span> <span class="badge badge-pill badge-secondary">₹99</span></h2>
+                        <h2 class="mt-0"><span class="badge badge-danger">ORDER FAST</span> <span class="badge badge-pill badge-secondary" data-toggle="tooltip" data-html="true" title="Order on<br><strong>+91 83839839</strong>">₹99</span></h2>
                         <p>
                         A perfect mix of white and dark meat, the Chicken Curry Cut package includes different cuts from half of the chicken with the leg, wing without tip and a quarter of the breast with backbone
                         </p>
@@ -127,5 +127,12 @@
     <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("[data-toggle='tooltip']").tooltip();
+        });
+        
+    </script>
 </body>
 </html>
