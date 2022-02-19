@@ -13,7 +13,7 @@
     "clean": "rimraf dist",
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
     "imagemin": "imagemin img/*  --out-dir='dist/img'",
-    "usemin":"usemin contactus.html -d dist --htmlmin -o dist/contact.html && usemin aboutus.html -d dist --html -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contact.html && usemin aboutus.html -d dist --html -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
     "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
   },
   "repository": {
@@ -28,14 +28,20 @@
   "homepage": "https://github.com/Talk2dilshad/ReactJs#readme",
   "devDependencies": {
     "cssmin": "^0.4.3",
+    "grunt": "^1.4.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^3.1.0",
     "htmlmin": "^0.0.7",
+    "jit-grunt": "^0.10.0",
     "lite-server": "^2.6.1",
     "node-sass": "^7.0.1",
     "onchange": "^7.1.0",
     "parallelshell": "^3.0.2",
     "rimraf": "^3.0.2",
+    "time-grunt": "^1.4.0",
     "uglifyjs": "^2.4.11",
-    "usemin-cli": "^0.6.0"
+    "usemin-cli": "^0.0.7"
   },
   "dependencies": {
     "bootstrap": "^4.6.1",
