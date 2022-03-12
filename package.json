@@ -1,0 +1,61 @@
+{
+  "name": "reactjs",
+  "version": "1.0.0",
+  "description": "ReactJs App server browser sync",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ style.scss/",
+    "watch:scss": "onchange \"*.scss\" -- npm run scss",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/*  --out-dir='dist/img'",
+    "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contact.html && usemin aboutus.html -d dist --html -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Talk2dilshad/ReactJs.git"
+  },
+  "author": "Dilshad Alam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Talk2dilshad/ReactJs/issues"
+  },
+  "homepage": "https://github.com/Talk2dilshad/ReactJs#readme",
+  "devDependencies": {
+    "cssmin": "^0.4.3",
+    "grunt": "^1.4.1",
+    "grunt-browser-sync": "^0.9.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-imagemin": "^4.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-filerev": "^2.3.1",
+    "grunt-sass": "^3.1.0",
+    "htmlmin": "^0.0.7",
+    "jit-grunt": "^0.10.0",
+    "lite-server": "^2.6.1",
+    "node-sass": "^7.0.1",
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.2",
+    "rimraf": "^3.0.2",
+    "time-grunt": "^1.4.0",
+    "uglifyjs": "^2.4.11",
+    "usemin-cli": "^0.6.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.1",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "grunt-usemin": "^0.1.13",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
