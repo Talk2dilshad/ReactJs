@@ -1,6 +1,7 @@
 // MAIN COMPONENT IS CONTAINER COMPONENT.... 
 import React, { Component } from 'react';
 import Menu from './menu_components';
+import Contact from './contactComponent';
 import Home from './HomeComponent';
 // import DishDetail from './DishdetailComponent';
 import Header from './headercomponent';
@@ -31,6 +32,7 @@ class Main extends Component {
         <Switch>
               <Route path='/home' component={HomePage} />
               <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
+              <Route exact path='/contactus' component={Contact} />
               <Redirect to="/home" />
           </Switch>
         <Footer/>
