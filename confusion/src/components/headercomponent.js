@@ -44,6 +44,8 @@ class Header extends Component{
 
             </div>{/* this container contain navigation bar */}
             </Navbar>
+
+            {/* jumbotron */}
                 <div className="container jumbotron mt-3">
                     <div class="mt-3 p-2  text-black rounded">
                     <div className="col-12 col-sm-6 ">
@@ -54,6 +56,7 @@ class Header extends Component{
                     </div>
                     </div>
                 </div>
+                
             </React.Fragment>
             
         );
