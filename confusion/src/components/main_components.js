@@ -4,9 +4,12 @@ import Menu from './menu_components';
 import Contact from './contactComponent';
 import Home from './HomeComponent';
 // import DishDetail from './DishdetailComponent';
-import Header from './headercomponent';
+import Header from './Headercomponent';
 import {DISHES} from '../shared/dishes';
-import Footer from './footercomponent';
+import { COMMENTS } from '../shared/comments';
+import {PROMOTIONS} from '../shared/promotion';
+import {LEADERS} from '../shared/leaders';
+import Footer from './Footercomponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // main component will render both menu and dishdetail
@@ -16,16 +19,23 @@ class Main extends Component {
       super(props);
       this.state = {
         dishes: DISHES,
-        selectedDish: null
+        comments: COMMENTS,
+        promotions: PROMOTIONS,
+        leaders: LEADERS 
       };
     }
     
     render(){
       const HomePage = () =>{
         return(
-          <Home/>
+          <Home 
+          dish= {this.state.dishes.filter((dish)=> dish.featured)[0]}
+          promotion= {this.state.promotions.filter((promo)=> promo.featured)[0]}
+          leader= {this.state.leaders.filter((leader)=> leader.featured)[0]}
+          />
         )
       }
+      
     return (
       <div>
         <Header/>
