@@ -10,7 +10,7 @@ import Header from './Headercomponent';
 import Footer from './Footercomponent';
 import { Switch, Route, Redirect ,withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import {addComment} from '../redux/ActionCreaters';
 // main component will render both menu and dishdetail
 
 const mapStateToProps = state => {
@@ -21,6 +21,11 @@ const mapStateToProps = state => {
     leaders: state.leaders
   }
 }
+
+const mapDispatchtoProps = (dispatch) => ({
+  addComment : (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment))
+});
+
 class Main extends Component {
   constructor(props) {
       super(props);
@@ -42,6 +47,7 @@ class Main extends Component {
         return(
           <DishDetail dish={this.props.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]} 
             comments={this.props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
+            addComment = {this.props.addComment}
           />
         );
       };
@@ -68,4 +74,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchtoProps)(Main));
