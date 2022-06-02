@@ -10,7 +10,7 @@ import Header from './Headercomponent';
 import Footer from './Footercomponent';
 import { Switch, Route, Redirect ,withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {addComment,fetchDishes} from '../redux/ActionCreaters';
+import {addComment,fetchComments,fetchDishes, fetchPromos} from '../redux/ActionCreaters';
 import { actions } from 'react-redux-form';
 // main component will render both menu and dishdetail
 
@@ -25,7 +25,9 @@ const mapStateToProps = state => {
 
 const mapDispatchtoProps = (dispatch) => ({
   addComment : (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment)),fetchDishes: () => {dispatch(fetchDishes())},
-  resetFeedbackForm: () => {dispatch(actions.reset('feedback'))}
+  resetFeedbackForm: () => {dispatch(actions.reset('feedback'))},
+  fetchComments: () => {dispatch(fetchComments())},
+  fetchPromos: () => {dispatch(fetchPromos())}
 });
 
 class Main extends Component {
@@ -35,6 +37,9 @@ class Main extends Component {
     }
     componentDidMount(){
       this.props.fetchDishes();
+      this.props.fetchComments();
+      this.props.fetchPromos();
+
     }    
 
     render(){
@@ -44,18 +49,21 @@ class Main extends Component {
           dish= {this.props.dishes.dishes.filter((dish)=> dish.featured)[0]}
           dishesLoading ={this.props.dishes.isLoading}
           dishesError_message = {this.props.dishes.error_message}
-          promotion= {this.props.promotions.filter((promo)=> promo.featured)[0]}
-          leader= {this.props.leaders.filter((leader)=> leader.featured)[0]}
+          promotion={this.props.promotions.promotions.filter((promo) => promo.featured)[0]}
+          promoLoading={this.props.promotions.isLoading}
+          promoError_message={this.props.promotions.error_message}
+          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
           />
         )
       }
       const  DishwithId=({match}) => {
         return(
-          <DishDetail dish={this.props.dishes.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]} 
-          isLoading ={this.props.dishes.isLoading}
-          Error_message = {this.props.dishes.error_message}
-            comments={this.props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
-            addComment = {this.props.addComment}
+          <DishDetail dish={this.props.dishes.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
+          isLoading={this.props.dishes.isLoading}
+          errorMessage={this.props.dishes.error_message}
+          comments={this.props.comments.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
+          commentsErrorMessage={this.props.comments.error_message}
+          addComment={this.props.addComment}
           />
         );
       };
@@ -80,6 +88,6 @@ class Main extends Component {
       </div>
     );
   }
-}
+} 
 
 export default withRouter(connect(mapStateToProps, mapDispatchtoProps)(Main));

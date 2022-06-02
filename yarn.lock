@@ -1237,6 +1237,14 @@ cors@~2.8.5:
     object-assign "^4"
     vary "^1"
 
+cross-fetch@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.1.0.tgz#7d4ea7e10a4f3bb73d5c2f0a3791ec3752d39b50"
+  integrity sha512-FTIt2WK44RiafWQ62xIvd+oBoVd392abh1lF872trLlA74JCR1s4oTHlixwoIKy44ehn8WbQ0Ds2P16sw7ZQxg==
+  dependencies:
+    node-fetch "2.1.1"
+    whatwg-fetch "2.0.3"
+
 cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -4149,6 +4157,11 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
+node-fetch@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.1.tgz#369ca70b82f50c86496104a6c776d274f4e4a2d4"
+  integrity sha512-6AJlcbC/MCslTTI89F4rg7Q+jOl7YfmzJVEFVCKuc9zvBzeupObeT540hXVYAkx/Hy2o+JX0RUH4ref0sadTjg==
+
 node-gyp@^8.4.1:
   version "8.4.1"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-8.4.1.tgz#3d49308fc31f768180957d6b5746845fbd429937"
@@ -6443,6 +6456,11 @@ websocket-extensions@>=0.1.1:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
+
+whatwg-fetch@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
+  integrity sha1-nITsLc9oGH/wC8ZOEnS0QhduHIQ=
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
